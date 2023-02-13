@@ -170,6 +170,7 @@ p {
     // width: 80%;
     padding-left: 6.825rem;
     padding-right: 6.825rem;
+    margin: 0rem 5rem;
   }
   &__container {
     @include tablet {
@@ -177,12 +178,13 @@ p {
       // margin: 0rem 2rem;
     }
     @include desktop {
-      padding: 1rem 4rem 2rem 4rem;
+      // padding: 1rem 4rem 2rem 4rem;
       // margin-left: -1rem;
       // margin: 1rem 3rem;
       // margin-left: 1rem;
       // margin-right: 1rem;
       // width: 90%;
+
       // padding: 0rem;
       // padding: 4rem 6rem 4rem 6rem;
     }
@@ -191,10 +193,6 @@ p {
     width: 100%;
     background-size: cover;
     background-position: center;
-    @include desktop {
-      // width: 100%;
-      // padding-left: 1rem;
-    }
   }
 
   &__container {
@@ -206,6 +204,9 @@ p {
       padding: 0rem;
       // width: 80%;
     }
+    // @include desktop {
+    //   padding: 0rem 10rem;
+    // }
   }
   &__quote {
     padding: 1rem 0rem;
@@ -218,7 +219,7 @@ p {
     }
     @include desktop {
       margin-top: 1rem;
-      margin-right: 22rem;
+      margin-right: 18rem;
     }
   }
   &__name {
@@ -232,6 +233,7 @@ p {
     @include desktop {
       // margin-left: 0rem;
       margin-top: 0rem;
+      // padding-right: 2rem;
       // margin-right: 50rem;
     }
   }
@@ -279,8 +281,8 @@ p {
     padding-right: 2rem;
   }
   @include desktop {
-    padding-left: 5.5rem;
-    padding-right: 5.5rem;
+    padding-left: 6.5rem;
+    padding-right: 6.5rem;
     // margin-left: 1rem;
     margin-top: 1rem;
     // margin-left: 2.5rem;

@@ -211,16 +211,12 @@ p {
   .about {
     padding-left: 6.825rem;
     padding-right: 6.825rem;
+    margin: 0rem 5rem;
   }
 }
 @media (min-width: 768px) {
   .about__container {
     padding: 1rem 3rem 2rem 3rem;
-  }
-}
-@media (min-width: 1200px) {
-  .about__container {
-    padding: 1rem 4rem 2rem 4rem;
   }
 }
 .about__img {
@@ -252,7 +248,7 @@ p {
 @media (min-width: 1200px) {
   .about__quote {
     margin-top: 1rem;
-    margin-right: 22rem;
+    margin-right: 18rem;
   }
 }
 .about__name {
@@ -318,8 +314,8 @@ p {
 }
 @media (min-width: 1200px) {
   .gallery {
-    padding-left: 5.5rem;
-    padding-right: 5.5rem;
+    padding-left: 6.5rem;
+    padding-right: 6.5rem;
     margin-top: 1rem;
   }
 }
