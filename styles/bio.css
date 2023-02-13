@@ -425,12 +425,7 @@ p {
   .footer__logo__top {
     display: block;
     padding-top: 1.25rem;
-    margin-right: 3rem;
-  }
-}
-@media (min-width: 1200px) {
-  .footer__logo__top {
-    padding-right: 3.5rem;
+    margin-right: 7rem;
   }
 }
 .footer__nav__link {

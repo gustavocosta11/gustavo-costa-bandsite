@@ -345,6 +345,9 @@ p {
     @include tablet {
       padding-right: 1rem;
     }
+    @include desktop {
+      // padding-right: 5rem;
+    }
   }
   &__header {
     padding-left: 1.25rem;
@@ -381,12 +384,12 @@ p {
       display: block;
       padding-top: 1.25rem;
       // padding-right: -1.25rem;
-      margin-right: 3rem;
+      margin-right: 7rem;
     }
 
-    @include desktop {
-      padding-right: 3.5rem;
-    }
+    // @include desktop {
+    //   padding-right: 5.5rem;
+    // }
   }
   &__nav__link {
     padding-right: 1.25rem;
