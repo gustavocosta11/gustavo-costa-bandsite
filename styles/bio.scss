@@ -171,6 +171,7 @@ p {
     padding-left: 6.825rem;
     padding-right: 6.825rem;
     margin: 0rem 5rem;
+    // margin: auto;
   }
   &__container {
     @include tablet {
@@ -178,15 +179,6 @@ p {
       // margin: 0rem 2rem;
     }
     @include desktop {
-      // padding: 1rem 4rem 2rem 4rem;
-      // margin-left: -1rem;
-      // margin: 1rem 3rem;
-      // margin-left: 1rem;
-      // margin-right: 1rem;
-      // width: 90%;
-
-      // padding: 0rem;
-      // padding: 4rem 6rem 4rem 6rem;
     }
   }
   &__img {
@@ -205,7 +197,8 @@ p {
       // width: 80%;
     }
     // @include desktop {
-    //   padding: 0rem 10rem;
+    //   flex-direction: column;
+    //   // justify-content: ;
     // }
   }
   &__quote {
@@ -377,6 +370,9 @@ p {
   &__logo__container {
     position: absolute;
     right: 0;
+    @include desktop {
+      margin: auto;
+    }
   }
   &__logo__top {
     display: none;
@@ -387,9 +383,9 @@ p {
       margin-right: 7rem;
     }
 
-    // @include desktop {
-    //   padding-right: 5.5rem;
-    // }
+    @include desktop {
+      // margin: auto;
+    }
   }
   &__nav__link {
     padding-right: 1.25rem;
