@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="./styles/bio.css" />
+    <!-- <script src="./scripts/index-page.js" defer></script> -->
     <title>Band Site</title>
   </head>
 
@@ -142,19 +143,23 @@
             <label class="comment__form__header"
               >NAME
               <input
+                id="name"
                 class="comment__input"
                 type="text"
                 name="name"
                 placeholder="  Enter your name"
+                required
               />
             </label>
             <label class="comment__form__header">
               COMMENT
               <textarea
+                id="comment"
                 class="comment__textarea"
                 type="text"
                 name="comment__textarea"
                 placeholder="  Add a new comment"
+                required
               ></textarea>
             </label>
             <button class="comment__button" type="submit">COMMENT</button>
@@ -239,5 +244,6 @@
         </section>
       </footer>
     </main>
+    <script src="./scripts/index-page.js"></script>
   </body>
 </html>
