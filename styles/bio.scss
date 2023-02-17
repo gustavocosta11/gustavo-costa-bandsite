@@ -365,6 +365,10 @@ p {
   margin-top: 0.25rem;
   font-family: "AvenirNext LT Pro";
   font-size: 0.875rem;
+  background-color: #fafafa;
+}
+.invalid {
+  border: 1px solid red;
 }
 
 .comment__textarea {
@@ -377,8 +381,11 @@ p {
   margin-bottom: 16px;
   color: #323232;
   font-size: 0.875rem;
+  background-color: #fafafa;
 }
-
+// textarea:invalid {
+//   border: 1px solid red;
+// }
 .comment__button {
   color: #ffffff;
   background-color: #323232;
@@ -419,10 +426,14 @@ p {
     }
   }
 
+  .comment__profile__container {
+    flex: 1;
+  }
   .comment__profile__header {
     display: flex;
     justify-content: space-between;
     padding-bottom: 1rem;
+    // flex: 1;
   }
 }
 
@@ -582,3 +593,15 @@ p {
     }
   }
 }
+
+// // @import "./partials/breakpoints";
+// @import "./partials/colors";
+// // @import "./partials/fonts";
+// // @import "./partials/navigation";
+// // @import "./partials/hero";
+// // @import "./partials/main";
+// // @import "./partials/photogallery";
+// // @import "./partials/footer";
+// // @import "./partials/comments";
+// // @import "./partials/hero-shows";
+// @import "./partials/shows";

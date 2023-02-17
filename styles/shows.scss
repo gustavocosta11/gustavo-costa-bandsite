@@ -8,7 +8,7 @@
   padding: 0;
   font-size: 16px;
   font-family: "AvenirNext LT Pro";
-  width: 100%;
+  //   width: 100%;
 }
 
 .nav {
@@ -67,6 +67,10 @@
   @include tablet {
     padding-bottom: 1.5rem;
     margin-bottom: -1rem;
+    margin-left: 0;
+  }
+  @include desktop {
+    margin-left: -2rem;
   }
 }
 
@@ -170,13 +174,60 @@ h1 {
 .shows {
   padding-top: 2rem;
   padding-left: 1rem;
+
+  @include tablet {
+    margin: 0 1.5rem;
+    // padding-left: 3rem;
+    // padding-right: 3rem;
+  }
+
+  @include desktop {
+    display: block;
+    // justify-content: space-between;
+  }
+
+  &__info {
+    display: none;
+    @include tablet {
+    }
+    // @include desktop {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   //   flex: 1;
+    //   flex-wrap: wrap;
+    //   flex-direction: column;
+    // }
+  }
+
+  &__about {
+    @include desktop {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+
   &__title {
+    width: 100%;
     font-size: 2rem;
+
+    @include tablet {
+      font-size: 2.25rem;
+      margin: 2rem 0 2rem 0;
+    }
+
+    @include desktop {
+      //   display: inline-block;
+      //   flex-direction: row;
+    }
   }
   &__container {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #e1e1e1;
+    // display: none;
+
     // @include small-tablet {
     //   display: flex;
     //   flex-direction: column;
@@ -194,10 +245,30 @@ h1 {
   font-size: 0.75rem;
   color: #afafaf;
   padding: 0.25rem 0rem;
+  // display: none;
+  //   width: 25%;
   @include wide-phone {
     font-size: 0.875rem;
   }
+  @include tablet {
+    width: 25%;
+    // display: none;
+  }
+  @include desktop {
+    // display: none;
+    // justify-content: space-between;
+    // flex-direction: row;
+  }
 }
+
+// .shows h4 {
+//   font-size: 0.75rem;
+//   color: #afafaf;
+//   padding: 0.25rem 0rem;
+
+//   @include tablet {
+//   }
+// }
 
 .shows p {
   color: #323232;
@@ -205,6 +276,9 @@ h1 {
   //   @include wide-phone {
   //     font-size: 1rem;
   //   }
+  @include tablet {
+    display: flex;
+  }
 }
 
 .shows a {
@@ -222,7 +296,7 @@ h1 {
     width: 85%;
   }
   @include tablet {
-    width: 75%;
+    width: 20%;
   }
 }
 .shows__container:hover {
@@ -380,7 +454,7 @@ h1 {
       display: none;
     }
   }
-  &__copyright__para {
+  &__copyright__p {
     font-size: 0.6875rem;
     padding-top: 1.25rem;
     @include tablet {

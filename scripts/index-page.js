@@ -25,19 +25,18 @@ const myForm = document.getElementById("form");
 
 myForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  commentSection.innerHTML = "";
 
   const newComment = {
     name: event.target.name.value,
     comment: event.target.comment__textarea.value,
-    date: Date.now(),
+    posted: Date.now(),
   };
+
   console.log(newComment);
-  commentsArr.push(newComment);
+  commentsArr.unshift(newComment);
   myForm.reset();
 
   allComments();
-  // //   newComment();
 });
 
 function allComments() {
@@ -78,44 +77,8 @@ function allComments() {
     profileHeader.appendChild(userName);
     profileHeader.appendChild(postedElement);
     commentContainer.appendChild(userComments);
-
     commentSection.appendChild(commentArticle);
   }
 }
 
-// const myForm = document.getElementById("form");
-
-// myForm.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   commentSection.innerHTML = "";
-
-//   const newComment = {
-//     name: event.target.name.value,
-//     comment: event.target.comment__textarea.value,
-//     date: Date.now(),
-//   };
-//   console.log(newComment);
-//   commentsArr.push(newComment);
-//   myForm.reset();
-
-//   allComments();
-//   // //   newComment();
-// });
 allComments();
-
-// const myForm = document.getElementById("comment__form");
-// myForm.addEventListener("submit", afterSubmit);
-// function afterSubmit(e) {
-//   e.preventDefault();
-//   document.getElementById("comments__section").innerHTML = "";
-//   let nameValue = document.getElementById("name").value;
-//   let commentValue = document.getElementById("comment").value;
-//   //creating an object for a new comment
-//   let newComment = {
-//     name: nameValue,
-//     comment: commentValue,
-//   };
-
-//   commentsArr.push(newComment);
-//   myForm.reset();
-// }

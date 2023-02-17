@@ -416,6 +416,11 @@ p {
   margin-top: 0.25rem;
   font-family: "AvenirNext LT Pro";
   font-size: 0.875rem;
+  background-color: #fafafa;
+}
+
+.invalid {
+  border: 1px solid red;
 }
 
 .comment__textarea {
@@ -428,6 +433,7 @@ p {
   margin-bottom: 16px;
   color: #323232;
   font-size: 0.875rem;
+  background-color: #fafafa;
 }
 
 .comment__button {
@@ -474,6 +480,9 @@ p {
     padding: 2rem 2rem;
     margin: 0rem 3rem;
   }
+}
+.comment .comment__profile__container {
+  flex: 1;
 }
 .comment .comment__profile__header {
   display: flex;

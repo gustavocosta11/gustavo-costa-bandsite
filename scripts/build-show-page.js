@@ -44,7 +44,7 @@ const shows = [
   },
 ];
 
-const show = document.querySelector(".shows__title");
+const show = document.querySelector(".shows");
 
 for (let j = 0; j < shows.length; j++) {
   const showsContainer = document.createElement("div");
@@ -52,7 +52,7 @@ for (let j = 0; j < shows.length; j++) {
 
   const dateTitle = document.createElement("h4");
   dateTitle.classList.add("shows__header");
-  dateTitle.innerText = "DATES";
+  dateTitle.innerText = "DATE";
 
   const showDate = document.createElement("p");
   showDate.innerText = shows[j].date;
