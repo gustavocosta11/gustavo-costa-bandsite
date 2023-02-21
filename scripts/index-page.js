@@ -122,19 +122,19 @@ const comment = document.querySelector("#comment");
 //   }
 // }
 
-form.addEventListener("submit", submitForm);
+// form.addEventListener("submit", submitForm);
 
-function submitForm(e) {
-  e.preventDefault();
+// function submitForm(e) {
+//   e.preventDefault();
 
-  const inputValue = input.value;
-  const commentValue = comment.value;
+//   const inputValue = input.value;
+//   const commentValue = comment.value;
 
-  if (inputValue === "") {
-    input.style.border = "2px solid red";
-  }
+//   if (inputValue === "") {
+//     input.style.border = "2px solid red";
+//   }
 
-  if (commentValue === "") {
-    comment.style.border = "2px solid red";
-  }
-}
+//   if (commentValue === "") {
+//     comment.style.border = "2px solid red";
+//   }
+// }
