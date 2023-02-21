@@ -51,29 +51,31 @@ for (let j = 0; j < shows.length; j++) {
   showsContainer.classList.add("shows__container");
 
   const dateTitle = document.createElement("h4");
-  dateTitle.classList.add("shows__header");
+  dateTitle.classList.add("shows__header__info--date");
   dateTitle.innerText = "DATE";
 
   const showDate = document.createElement("p");
+  showDate.classList.add("shows__header__about__date");
   showDate.innerText = shows[j].date;
 
   const showVenue = document.createElement("h4");
-  showVenue.classList.add("shows__header");
+  showVenue.classList.add("shows__header__info--venue");
   showVenue.innerText = "VENUE";
 
   const venueTitle = document.createElement("p");
+  venueTitle.classList.add("shows__header__about__venue");
   venueTitle.innerText = shows[j].venue;
 
   const showLocation = document.createElement("h4");
-  showLocation.classList.add("shows__header");
+  showLocation.classList.add("shows__header__info--location");
   showLocation.innerText = "LOCATION";
 
   const locationTitle = document.createElement("p");
+  locationTitle.classList.add("shows__header__about__location");
   locationTitle.innerText = shows[j].location;
 
   const showButton = document.createElement("button");
   showButton.innerText = "BUY TICKETS";
-
   showButton.classList.add("shows__btn");
 
   showsContainer.appendChild(dateTitle);

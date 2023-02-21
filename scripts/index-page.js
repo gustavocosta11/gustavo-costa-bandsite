@@ -32,14 +32,18 @@ myForm.addEventListener("submit", (event) => {
     posted: Date.now(),
   };
 
-  console.log(newComment);
-  commentsArr.unshift(newComment);
+  //   console.log(newComment);
+  commentsArr.push(newComment);
+  //   commentsArr.unshift(newComment);
   myForm.reset();
 
   allComments();
 });
 
 function allComments() {
+  commentsArr.sort((a, b) => {
+    return b.posted - a.posted;
+  });
   commentSection.innerHTML = "";
   for (let i = 0; i < commentsArr.length; i++) {
     const commentArticle = document.createElement("article");
@@ -82,3 +86,55 @@ function allComments() {
 }
 
 allComments();
+
+const form = document.querySelector("#form");
+const input = document.querySelector("#name");
+const comment = document.querySelector("#comment");
+
+// form.addEventListener("submit", submitForm);
+// form.addEventListener("input", validateInput);
+
+// function validateInput(e) {
+//   let isInvalid = false;
+//   const value = e.target.value.trim();
+//   switch (e.target.name) {
+//     case "name":
+//       isInvalid = value === "";
+//       break;
+
+//     case "comment":
+//       isInvalid = value === "";
+//       break;
+//   }
+//   e.classList.add("invalid", isInvalid);
+//   return isInvalid;
+// }
+
+// function submitForm(e) {
+//   e.preventDefault();
+
+//   const isInvalid =
+//     validateInput({ target: input }) | validateInput({ target: comment });
+
+//   if (isInvalid) {
+//     //not all fields are valid do something here
+//     // style.border = "2px solid red";
+//   }
+// }
+
+form.addEventListener("submit", submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+
+  const inputValue = input.value;
+  const commentValue = comment.value;
+
+  if (inputValue === "") {
+    input.style.border = "2px solid red";
+  }
+
+  if (commentValue === "") {
+    comment.style.border = "2px solid red";
+  }
+}
