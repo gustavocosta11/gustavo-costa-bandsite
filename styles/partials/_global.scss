@@ -27,13 +27,13 @@ body {
   font-family: "AvenirNext LT Pro";
 }
 hr {
-  border-top: 5px solid $primary-black;
+  border-top: 5px solid #323232;
 }
 h1 {
   @include fonts(600);
   font-size: 1.5rem;
   line-height: 2rem;
-  color: $primary-white;
+  color: #ffffff;
   @include tablet {
     font-size: 3.75rem;
     line-height: 4.25rem;
@@ -83,7 +83,7 @@ p {
 .label-btn {
   @include fonts(600);
   text-transform: uppercase;
-  color: $secondary-mercury;
+  color: #e1e1e1;
   font-size: 0.625rem;
   line-height: 1.25rem;
   @include tablet {
@@ -92,7 +92,7 @@ p {
   }
 }
 .nav {
-  background-color: $primary-black;
+  background-color: #323232;
   padding-top: 1rem;
   @include tablet {
     padding-top: 1.5rem;
@@ -143,32 +143,32 @@ p {
       margin-bottom: -5px;
     }
     &--active {
-      border-bottom: 3px $primary-white solid;
+      border-bottom: 3px #ffffff solid;
       font-weight: 600;
     }
     &:hover {
-      border-bottom: 3px $secondary-mercury solid;
+      border-bottom: 3px #e1e1e1 solid;
     }
   }
   &__link {
     // font-family: 'Avenir Regular';
     font-size: 1rem;
     text-decoration: none;
-    color: $secondary-mercury;
+    color: #e1e1e1;
     &--active {
       // font-family: 'Avenir Demi';
-      color: $primary-white;
+      color: #ffffff;
     }
     &:hover {
-      color: $primary-white;
+      color: #ffffff;
     }
   }
 }
 
 .footer {
-  background-color: $primary-black;
-  color: $primary-white;
-  &__wrapper {
+  background-color: #323232;
+  color: #ffffff;
+  &__container {
     @extend .wrapper;
   }
   &__title {
@@ -235,11 +235,11 @@ p {
   min-width: 150px;
   border-radius: 4px;
   padding: 0 2rem;
-  background-color: $primary-black;
-  color: $primary-white;
+  background-color: #323232;
+  color: #ffffff;
   border: 0;
   &:hover {
-    background-color: $secondary-dark-black;
+    background-color: #000000;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }

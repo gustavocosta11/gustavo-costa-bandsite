@@ -615,7 +615,14 @@
 
 .about {
   &__wrapper {
-    @extend .wrapper;
+    margin: 0 1rem;
+    @include tablet {
+      margin: 0 2.25rem;
+    }
+    @include desktop {
+      max-width: 64rem;
+      margin: 0 auto;
+    }
   }
   &__container {
     @include tablet {
@@ -652,9 +659,14 @@
   //   // font-size: 1rem;
   // }
   &__wrapper {
-    @extend .wrapper;
+    margin: 0 1rem;
     @include tablet {
       padding: 0 3rem;
+    }
+
+    @include desktop {
+      max-width: 64rem;
+      margin: 0 auto;
     }
   }
   &__container {
@@ -668,9 +680,17 @@
   }
 }
 .gallery {
-  background-color: $secondary-alabaster;
+  background-color: #fafafa;
   &__wrapper {
-    @extend .wrapper;
+    margin: 0 1rem;
+  @include tablet {
+    margin: 0 2.25rem;
+  }
+  @include desktop {
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+
   }
   &__img-container {
     @include flexbox(column);
@@ -690,8 +710,16 @@
   }
 }
 .comments {
-  &__wrapper {
-    @extend .wrapper;
+  &__section {
+    margin: 0 1rem;
+  @include tablet {
+    margin: 0 2.25rem;
+  }
+  @include desktop {
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+
     @extend .padding-bottom;
   }
   &__container {
@@ -723,7 +751,7 @@
         height: 2.25rem;
         border-radius: 4px;
         padding: 0.75rem;
-        border: 1px solid $secondary-mercury;
+        border: 1px solid #e1e1e1;
         margin-bottom: 1rem;
         width: 75vw;
         @include tablet {
@@ -734,7 +762,7 @@
         }
         &:focus {
           outline: none;
-          border-color: $primary-black;
+          border-color: #323232;
         }
         &--error {
           &:focus {
@@ -764,11 +792,11 @@
       justify-content: center;
       gap: 1.25rem;
       padding: 1rem 0;
-      border-bottom: 1px solid $secondary-mercury;
+      border-bottom: 1px solid #e1e1e1;
       margin: auto;
       &__img {
         // background-image: url("../assets/images/Default_pfp.svg.png");
-        background-color: $secondary-mercury;
+        background-color: #e1e1e1;
         border-radius: 50%;
         height: 2.25rem;
         width: 2.25rem;
@@ -807,7 +835,7 @@
         display: flex;
         align-items: flex-start;
         gap: 0.3125rem;
-        color: $primary-black;
+        color: #323232;
         background-color: white;
         // border: none;
         margin: 0;

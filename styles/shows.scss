@@ -643,7 +643,7 @@
     }
   }
   &__header {
-    color: $primary-white;
+    color: #ffffff;
     max-width: 15rem;
     @extend .padding-bottom;
     @include tablet {
@@ -704,20 +704,20 @@
     &__body {
       .table__row {
         display: block;
-        border-bottom: 1px solid $secondary-mercury;
+        border-bottom: 1px solid #e1e1e1;
         margin-bottom: 1rem;
         @include tablet {
           display: flex;
           align-items: center;
         }
         &:hover {
-          background-color: $secondary-alabaster;
+          background-color: #fafafa;
         }
         &--selected {
           @include tablet {
-            background-color: $secondary-mercury;
+            background-color: #e1e1e1;
             &:hover {
-              background-color: $secondary-mercury;
+              background-color: #e1e1e1;
             }
           }
         }
