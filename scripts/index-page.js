@@ -1,147 +1,7 @@
-// const commentsArr = [
-//   {
-//     name: "Connor Walton",
-//     posted: 1613608320000,
-//     comment:
-//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//   },
-//   {
-//     name: "Emilie Beach",
-//     posted: 1610238720000,
-//     comment:
-//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//   },
-//   {
-//     name: "Miles Acosta",
-//     posted: 1608510720000,
-//     comment:
-//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//   },
-// ];
-
-// const commentSection = document.querySelector(".comment__section");
-
-// const myForm = document.getElementById("form");
-
-// myForm.addEventListener("submit", (event) => {
-//   event.preventDefault();
-
-//   const newComment = {
-//     name: event.target.name.value,
-//     comment: event.target.comment__textarea.value,
-//     posted: Date.now(),
-//   };
-
-//   //   console.log(newComment);
-//   commentsArr.push(newComment);
-//   //   commentsArr.unshift(newComment);
-//   myForm.reset();
-
-//   allComments();
-// });
-
-// function allComments() {
-//   commentsArr.sort((a, b) => {
-//     return b.posted - a.posted;
-//   });
-//   commentSection.innerHTML = "";
-//   for (let i = 0; i < commentsArr.length; i++) {
-//     const commentArticle = document.createElement("article");
-
-//     commentArticle.classList.add("comment__container");
-
-//     const commentImg = document.createElement("img");
-
-//     commentImg.classList.add("comment__img");
-
-//     commentImg.setAttribute("src", "assets/images/Default_pfp.svg.png");
-
-//     const commentContainer = document.createElement("div");
-
-//     commentContainer.classList.add("comment__profile__container");
-
-//     const profileHeader = document.createElement("div");
-//     profileHeader.classList.add("comment__profile__header");
-
-//     const userName = document.createElement("h4");
-
-//     userName.innerText = commentsArr[i].name;
-
-//     const postedElement = document.createElement("p");
-//     postedElement.innerText = new Date(
-//       commentsArr[i].posted
-//     ).toLocaleDateString();
-
-//     const userComments = document.createElement("p");
-//     userComments.innerText = commentsArr[i].comment;
-
-//     commentArticle.appendChild(commentImg);
-//     commentArticle.appendChild(commentContainer);
-//     commentContainer.appendChild(profileHeader);
-//     profileHeader.appendChild(userName);
-//     profileHeader.appendChild(postedElement);
-//     commentContainer.appendChild(userComments);
-//     commentSection.appendChild(commentArticle);
-//   }
-// }
-
-// allComments();
-
-// const form = document.querySelector("#form");
-// const input = document.querySelector("#name");
-// const comment = document.querySelector("#comment");
-
-// form.addEventListener("submit", submitForm);
-// form.addEventListener("input", validateInput);
-
-// function validateInput(e) {
-//   let isInvalid = false;
-//   const value = e.target.value.trim();
-//   switch (e.target.name) {
-//     case "name":
-//       isInvalid = value === "";
-//       break;
-
-//     case "comment":
-//       isInvalid = value === "";
-//       break;
-//   }
-//   e.classList.add("invalid", isInvalid);
-//   return isInvalid;
-// }
-
-// function submitForm(e) {
-//   e.preventDefault();
-
-//   const isInvalid =
-//     validateInput({ target: input }) | validateInput({ target: comment });
-
-//   if (isInvalid) {
-//     //not all fields are valid do something here
-//     // style.border = "2px solid red";
-//   }
-// }
-
-// form.addEventListener("submit", submitForm);
-
-// function submitForm(e) {
-//   e.preventDefault();
-
-//   const inputValue = input.value;
-//   const commentValue = comment.value;
-
-//   if (inputValue === "") {
-//     input.style.border = "2px solid red";
-//   }
-
-//   if (commentValue === "") {
-//     comment.style.border = "2px solid red";
-//   }
-// }
-
 const link = "https://project-1-api.herokuapp.com/comments";
 const apiKey = "?api_key=b70c7207-fea6-4ea5-98db-d101d901be50";
-//function takes in comment data and return html card with format
+
+//function that takes the comment and it goes to the comment section
 function displayComment(comment) {
   const commentLi = document.createElement("li");
   commentLi.classList.add("item");
@@ -185,7 +45,7 @@ function displayComment(comment) {
   const likeImgLink = document.createElement("a");
   likeImgLink.classList.add("item__actions", "item__actions--like");
   likeImgLink.setAttribute("data-id", comment.id);
-  // likeImgLink.setAttribute("onclick", "liked(this)");
+
   likeImgLink.setAttribute("value", "like");
   itemFooter.appendChild(likeImgLink);
 
@@ -205,11 +65,11 @@ function displayComment(comment) {
   deleteLink.classList.add("item__actions", "item__actions--delete");
   deleteLink.setAttribute("data-id", comment.id);
   deleteLink.innerText = "Delete";
-  // deleteLink.setAttribute("onclick", "deleteComment(this)");
   deleteLink.setAttribute("value", "delete");
   itemFooter.appendChild(deleteLink);
 }
 //function returns comments card list from api response data
+// function that takes the comment from api list(response data) using axios
 function showCommentsList() {
   const getComments = axios.get(link + apiKey);
   getComments.then((response) => {
@@ -224,10 +84,10 @@ function showCommentsList() {
   });
 }
 
+// submit button that adds the comment when clicked
 const form = document.querySelector(".form");
 const commentsList = document.querySelector(".comments__list");
 showCommentsList();
-//add comment once the submit button is clicked
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const submittedName = event.target.formName;
@@ -245,7 +105,7 @@ form.addEventListener("submit", (event) => {
   }
 });
 
-// listens for clicks on comment like and delete button of a comment and takes action accordingly
+// like and delete button section
 const itemActions = document.querySelector(".comments__list");
 
 itemActions.addEventListener("click", (event) => {
@@ -265,7 +125,7 @@ itemActions.addEventListener("click", (event) => {
   }
 });
 
-//function check if the text added in the field is valid characters
+// function to check if textarea is valid
 function formValidation(nameField, commentField) {
   const valid = /^[a-zA-Z]/;
   if (!valid.test(nameField.value)) {

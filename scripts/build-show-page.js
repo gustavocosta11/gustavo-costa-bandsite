@@ -98,8 +98,8 @@ showTable();
 //function takes data from api response and returns table of schedule of shows on the page
 function showTable() {
   const getShows = axios.get(link + apiKey);
-  getShows.then((res) => {
-    const showsArray = res.data;
+  getShows.then((response) => {
+    const showsArray = response.data;
     tableBody.innerHTML = "";
     showsArray.forEach((show) => {
       const tableRow = document.createElement("div");

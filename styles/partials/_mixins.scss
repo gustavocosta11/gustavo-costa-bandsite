@@ -1,41 +1,3 @@
-// @use "variables" as *;
-
-// @mixin midsize-phone {
-//   @media (min-width: $midsize-phone) {
-//     @content;
-//   }
-// }
-
-// @mixin wide-phone {
-//   @media (min-width: $wide-phone) {
-//     @content;
-//   }
-// }
-
-// @mixin small-tablet {
-//   @media (min-width: $small-tablet) {
-//     @content;
-//   }
-// }
-
-// @mixin large-tablet {
-//   @media (min-width: $large-tablet) {
-//     @content;
-//   }
-// }
-
-// @mixin tablet {
-//   @media (min-width: $tablet-width) {
-//     @content;
-//   }
-// }
-
-// @mixin desktop {
-//   @media (min-width: 1200px) {
-//     @content;
-//   }
-// }
-
 @use "./variables.scss" as *;
 @use "./font" as *;
 
@@ -45,13 +7,13 @@
   }
 }
 @mixin tablet {
-  @media screen and (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media screen and (min-width: $desktop-width) {
+  @media (min-width: 1200px) {
     @content;
   }
 }
