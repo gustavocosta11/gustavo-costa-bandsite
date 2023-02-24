@@ -51,7 +51,7 @@ function displayComment(comment) {
 
   const likeImg = document.createElement("img");
   likeImg.classList.add("like-img");
-  likeImg.setAttribute("src", "./assets/icons/SVG/icon-like.svg");
+  likeImg.setAttribute("src", "./assets/icons/heart-15.svg");
   likeImg.setAttribute("data-id", comment.id);
   likeImg.setAttribute("value", "like");
   likeImgLink.appendChild(likeImg);
@@ -68,7 +68,6 @@ function displayComment(comment) {
   deleteLink.setAttribute("value", "delete");
   itemFooter.appendChild(deleteLink);
 }
-//function returns comments card list from api response data
 // function that takes the comment from api list(response data) using axios
 function showCommentsList() {
   const getComments = axios.get(link + apiKey);
