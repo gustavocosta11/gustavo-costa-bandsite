@@ -1,7 +1,7 @@
 const link = "https://project-1-api.herokuapp.com/comments";
 const apiKey = "?api_key=b70c7207-fea6-4ea5-98db-d101d901be50";
 
-//function that takes the comment and it goes to the comment section
+//function that displays the comment and it goes to the comment section
 function displayComment(comment) {
   const commentLi = document.createElement("li");
   commentLi.classList.add("item");
@@ -27,7 +27,7 @@ function displayComment(comment) {
 
   const itemDate = document.createElement("p");
   itemDate.classList.add("item__date");
-  itemDate.innerText = new Date(comment.timestamp).toLocaleDateString("en-US");
+  itemDate.innerText = new Date(comment.timestamp).toLocaleDateString();
   itemHeader.appendChild(itemDate);
 
   const itemBody = document.createElement("div");
@@ -49,35 +49,33 @@ function displayComment(comment) {
   likeImgLink.setAttribute("value", "like");
   itemFooter.appendChild(likeImgLink);
 
-  const likeImg = document.createElement("img");
-  likeImg.classList.add("like-img");
-  likeImg.setAttribute("src", "./assets/icons/heart-15.svg");
-  likeImg.setAttribute("data-id", comment.id);
-  likeImg.setAttribute("value", "like");
-  likeImgLink.appendChild(likeImg);
+  const likeBtn = document.createElement("img");
+  likeBtn.classList.add("like-img");
+  likeBtn.setAttribute("src", "assets/icons/SVG/heart-15.svg");
+  likeBtn.setAttribute("data-id", comment.id);
+  likeBtn.setAttribute("value", "like");
+  likeImgLink.appendChild(likeBtn);
 
   const likeCounter = document.createElement("p");
-  likeImg.classList.add("like-counter");
+  likeBtn.classList.add("like-counter");
   likeCounter.innerText = comment.likes;
   likeImgLink.appendChild(likeCounter);
 
-  const deleteLink = document.createElement("a");
-  deleteLink.classList.add("item__actions", "item__actions--delete");
-  deleteLink.setAttribute("data-id", comment.id);
-  deleteLink.innerText = "Delete";
-  deleteLink.setAttribute("value", "delete");
-  itemFooter.appendChild(deleteLink);
+  const deleteBtn = document.createElement("a");
+  deleteBtn.classList.add("item__actions", "item__actions--delete");
+  deleteBtn.setAttribute("data-id", comment.id);
+  deleteBtn.innerText = "Delete";
+  deleteBtn.setAttribute("value", "delete");
+  itemFooter.appendChild(deleteBtn);
 }
 // function that takes the comment from api list(response data) using axios
 function showCommentsList() {
   const getComments = axios.get(link + apiKey);
   getComments.then((response) => {
     const commentsData = response.data;
-    const commentsArray = commentsData.sort(
-      (a, b) => b.timestamp - a.timestamp
-    );
+    const commentsArr = commentsData.sort((a, b) => b.timestamp - a.timestamp);
     commentsList.innerHTML = "";
-    commentsArray.forEach((comment) => {
+    commentsArr.forEach((comment) => {
       displayComment(comment);
     });
   });
@@ -91,7 +89,7 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const submittedName = event.target.formName;
   const submittedComment = event.target.formComment;
-  if (formValidation(submittedName, submittedComment)) {
+  if ((submittedName, submittedComment)) {
     const postedComment = {
       name: submittedName.value,
       comment: submittedComment.value,
@@ -123,21 +121,3 @@ itemActions.addEventListener("click", (event) => {
     }
   }
 });
-
-// function to check if textarea is valid
-function formValidation(nameField, commentField) {
-  const valid = /^[a-zA-Z]/;
-  if (!valid.test(nameField.value)) {
-    nameField.focus();
-    nameField.value = "";
-    nameField.classList.add("form__input--error");
-    return false;
-  } else if (!valid.test(commentField.value)) {
-    commentField.focus();
-    commentField.value = "";
-    commentField.classList.add("form__input--error");
-    return false;
-  } else {
-    return true;
-  }
-}
